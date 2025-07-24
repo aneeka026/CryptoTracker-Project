@@ -1,0 +1,44 @@
+.features-page {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-color);
+}
+  
+.features-intro {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--highlight);
+}
+  
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+  
+.feature-card {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+  
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+  
+.feature-card h2 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: var(--highlight);
+}
+  
+.feature-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+  
