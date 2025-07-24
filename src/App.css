@@ -1,42 +1,38 @@
-/* ==== Theme Colors using CSS variables ==== */
-:root { /* :root → defines it at the top level, so it's available globally.*/
+:root {
   --bg-color: #0f0c29;
-  color: white;
-  card-background: #1c1f3c;
+  --text-color: white;
+  --card-background: #1c1f3c;
   --header-bg: #0b0c2a;
   --highlight: #7b2ff7;
 }
- 
-/* ==== Light btn overrides ==== */
+
 body.light {
-  background-color: #f5f5f5;
-  color: #111;
-  card-background: #ffffff;
+  --bg-color: #f5f5f5;
+  --text-color: #111;
+  --card-background: #ffffff;
   --header-bg: #eaeaea;
   --highlight: #7b2ff7;
 }
 
-/* ==== Base Body Styles ==== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--bg-color); /*var(--bg-color) function fetches the value.*/
+  background-color: var(--bg-color);
   color: var(--text-color);
+  transition: all 0.3s ease;
   text-align: center;
-  transition: all 0.3s ease; /* Smooth btn switch */
 }
 
-/* ==== Header Styling ==== */
+/* ===== Header Styles ===== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: var(--header-bg);
-  flex-wrap: wrap; /* Handles smaller screens */
+  flex-wrap: wrap;
 }
 
-/* ==== Navigation Links ==== */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -49,11 +45,12 @@ nav a {
   text-decoration: none;
   font-weight: bold;
 }
-a:hover {
+
+nav a:hover {
   color: #535bf2;
 }
 
-/* ==== Mode Toggle Button ==== */
+/* ===== Toggle Button ===== */
 .btn-toggle {
   padding: 0.5rem 1rem;
   background-color: var(--highlight);
@@ -64,7 +61,7 @@ a:hover {
   font-weight: bold;
 }
 
-/* ==== Hero Section (Main Title & Intro) ==== */
+/* ===== Hero Section ===== */
 .hero {
   margin: 3rem 1rem 1rem;
 }
@@ -78,7 +75,7 @@ a:hover {
   font-size: 1.1rem;
 }
 
-/* ==== Search Box Styling ==== */
+/* ===== Search Bar ===== */
 .search-container {
   margin: 2rem auto;
   display: flex;
@@ -88,7 +85,6 @@ a:hover {
   max-width: 500px;
 }
 
-/* ==== Form Inputs and Selects ==== */
 .search-container input[type="text"],
 input,
 select {
@@ -97,9 +93,14 @@ select {
   font-size: 1rem;
   border-radius: 8px;
   border: none;
+  background-color: var(--card-background);
+  color: var(--text-color);
 }
 
-/* ==== Buttons ==== */
+.search-container input::placeholder {
+  color: #aaa;
+}
+
 .search-container button,
 button[type="submit"] {
   padding: 0.8rem 2rem;
@@ -112,20 +113,20 @@ button[type="submit"] {
 }
 
 .search-container button:hover {
-  background-color: #5d1cc6; /* Slightly darker on hover */
+  background-color: #5d1cc6;
 }
 
-/* ==== Table for Crypto Data ==== */
+/* ===== Crypto Table ===== */
 table {
   margin: 2rem auto;
   border-collapse: collapse;
   width: 90%;
   max-width: 1000px;
-  background-color: var(card-background);
+  background-color: var(--card-background);
   border-radius: 10px;
   overflow: hidden;
 }
- 
+
 th,
 td {
   padding: 1rem;
@@ -136,7 +137,6 @@ th {
   background-color: #292d5d;
 }
 
-/* ==== Price Change Colors ==== */
 .positive {
   color: #00ff88;
 }
@@ -145,17 +145,7 @@ th {
   color: #ff4c4c;
 }
 
-/* ==== Section Spacing ==== */
-.section {
-  padding: 3rem 1rem;
-}
-
-/* ==== Signup Form Input Spacing ==== */
-form input {
-  margin: 0.5rem 0;
-}
-
-/* ==== Medium Screen: Tablet & Small Laptops ==== */
+/* ===== Responsive Design ===== */
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
@@ -174,7 +164,6 @@ form input {
   }
 }
 
-/* ==== Small Screen: Mobile Phones ==== */
 @media screen and (max-width: 480px) {
   .hero h1 {
     font-size: 1.8rem;
