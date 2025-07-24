@@ -11,7 +11,7 @@ const SearchBar = ({ query, setQuery, onSearch }) => {
        value={query} // Display the current search query
        onChange={(e) => setQuery(e.target.value)} // Update search query as user types
       />
-      {/* Button to trigger search when clicked */}
+      
       <button onClick={onSearch}>Search</button>
     </section>
   )
